@@ -1,0 +1,429 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>سياسة الخصوصية وشروط الاستخدام - أسواق أكسب</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700&display=swap" rel="stylesheet">
+  <style>
+    /* المتغيرات الأساسية للألوان والخطوط */
+    :root {
+      --bg-color: #f5f7fa;
+      --text-color: #333;
+      --header-bg: linear-gradient(to right, #2c3e50, #4a6491);
+      --header-text: white;
+      --card-bg: white;
+      --shadow-color: rgba(0,0,0,0.1);
+      --logo-icon-color: #4CAF50;
+      --section-heading-color: #2c3e50;
+      --accent-color: #4CAF50; /* لون مميز للعناصر الهامة */
+      --light-text-color: #666;
+      --back-button-bg: #4CAF50;
+      --back-button-hover-bg: #45a049;
+    }
+
+    /* الوضع الداكن */
+    body.dark-mode {
+      --bg-color: #1a1a2e;
+      --text-color: #e0e0e0;
+      --header-bg: linear-gradient(to right, #16213e, #0f3460);
+      --header-text: #f0f0f0;
+      --card-bg: #222831;
+      --shadow-color: rgba(0,0,0,0.3);
+      --logo-icon-color: #bb86fc;
+      --section-heading-color: #bb86fc;
+      --accent-color: #bb86fc;
+      --light-text-color: #aaaaaa;
+      --back-button-bg: #bb86fc;
+      --back-button-hover-bg: #a16cdc;
+    }
+
+    /* الأنماط العامة */
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: 'Tajawal', sans-serif;
+    }
+
+    body {
+      background-color: var(--bg-color);
+      color: var(--text-color);
+      direction: rtl;
+      transition: background-color 0.3s, color 0.3s;
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+      align-items: center;
+      padding: 20px;
+    }
+
+    /* الـ Header الأساسي للصفحة */
+    .top-header {
+      background: var(--header-bg);
+      color: var(--header-text);
+      padding: 15px;
+      text-align: center;
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      width: 100%;
+      max-width: 800px;
+      border-radius: 15px 15px 0 0;
+      box-shadow: 0 4px 8px var(--shadow-color);
+    }
+    .header-actions {
+      position: absolute;
+      top: 15px;
+      left: 15px;
+      right: 15px;
+      display: flex;
+      justify-content: space-between;
+      width: calc(100% - 30px);
+    }
+    .theme-toggle {
+        cursor: pointer;
+        font-size: 20px;
+        color: var(--header-text);
+        transition: color 0.3s;
+        padding: 5px 10px;
+        border-radius: 8px;
+        display: flex;
+        align-items: center;
+        gap: 5px;
+    }
+    .logo {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      margin-top: 0;
+      margin-bottom: 10px;
+    }
+    .logo i {
+      font-size: 28px;
+      color: var(--logo-icon-color);
+      background: white;
+      border-radius: 50%;
+      padding: 8px;
+      transition: color 0.3s;
+    }
+    .logo h1 {
+      font-size: 22px;
+      font-weight: bold;
+    }
+    .welcome-message {
+      font-size: 1.1rem;
+      margin-top: 10px;
+      font-weight: 500;
+      color: var(--header-text);
+    }
+
+    /* حاوية المحتوى الرئيسية للصفحة */
+    .content-container {
+      background: var(--card-bg);
+      padding: 30px;
+      border-radius: 0 0 15px 15px;
+      box-shadow: 0 4px 15px var(--shadow-color);
+      width: 100%;
+      max-width: 800px;
+      text-align: right; /* محاذاة النص لليمين للغة العربية */
+      line-height: 1.8; /* لراحة القراءة */
+    }
+
+    h2 {
+      color: var(--section-heading-color);
+      margin-top: 30px;
+      margin-bottom: 20px;
+      text-align: center;
+      font-size: 2rem;
+      position: relative;
+      padding-bottom: 10px;
+    }
+    h2::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      right: 50%;
+      transform: translateX(50%);
+      width: 100px;
+      height: 3px;
+      background-color: var(--accent-color);
+      border-radius: 5px;
+    }
+    h2:first-of-type { /* لا يوجد margin-top لأول عنوان */
+        margin-top: 0;
+    }
+
+    h3 {
+      color: var(--accent-color);
+      margin-top: 25px;
+      margin-bottom: 10px;
+      font-size: 1.5rem;
+    }
+
+    p, ul, ol {
+      margin-bottom: 15px;
+      font-size: 1.1rem;
+      color: var(--text-color);
+    }
+
+    ul, ol {
+      margin-right: 20px; /* مسافة للترقيم والنقاط */
+      list-style-position: inside;
+    }
+    ul li, ol li {
+        margin-bottom: 8px;
+    }
+    b, strong {
+        color: var(--section-heading-color);
+    }
+
+    .call-to-action {
+      text-align: center;
+      margin-top: 40px;
+      padding-top: 20px;
+      border-top: 1px solid rgba(0,0,0,0.1);
+    }
+    .call-to-action p {
+      font-size: 1.2rem;
+      font-weight: 500;
+      color: var(--section-heading-color);
+      margin-bottom: 20px;
+    }
+    .back-button {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 12px 25px;
+      border: none;
+      border-radius: 8px;
+      background-color: var(--back-button-bg);
+      color: white;
+      font-size: 1.1rem;
+      font-weight: bold;
+      cursor: pointer;
+      text-decoration: none;
+      transition: background-color 0.3s, transform 0.3s;
+    }
+    .back-button:hover {
+      background-color: var(--back-button-hover-bg);
+      transform: translateY(-2px);
+    }
+
+  </style>
+</head>
+<body>
+
+  <div class="top-header">
+    <div class="header-actions">
+      <div class="theme-toggle" id="themeToggle">
+        <i class="fas fa-moon"></i>
+      </div>
+    </div>
+
+    <div class="logo">
+      <i class="fas fa-store"></i>
+      <h1>أسواق أكسب</h1>
+    </div>
+    <p class="welcome-message">سياسة الخصوصية وشروط الاستخدام</p>
+  </div>
+
+  <div class="content-container">
+
+    <h2><i class="fas fa-file-contract"></i> سياسة الخصوصية</h2>
+
+    <p>
+      مرحباً بكم في **"أسواق أكسب"**. نولي في "أسواق أكسب" حماية خصوصية بياناتكم أهمية قصوى.
+      توضح هذه السياسة كيفية جمعنا لبياناتكم الشخصية، استخدامها، تخزينها، وحمايتها عند استخدامكم لتطبيقنا وخدماتنا.
+      باستخدامك لتطبيق "أسواق أكسب"، فإنك توافق على الشروط الموضحة في هذه السياسة.
+    </p>
+
+    <h3>1. البيانات التي نجمعها</h3>
+    <p>نقوم بجمع أنواع مختلفة من البيانات لتحسين تجربتكم وتقديم خدماتنا:</p>
+    <ul>
+      <li>
+        <b>البيانات التي تقدمها مباشرة:</b>
+        <ul>
+          <li><b>بيانات الحساب:</b> الاسم الكامل، رقم الهاتف، البريد الإلكتروني، كلمة المرور المشفرة.</li>
+          <li><b>بيانات ملف المتجر (للتجار):</b> اسم المتجر، العنوان، وصف المتجر، أوقات العمل، معلومات الحساب البنكي (إذا كان التطبيق يدعم المدفوعات المباشرة).</li>
+          <li>
+            <b>الصور والوثائق (اختياري):</b> إذا كنت تاجراً، قد تطلب منك خاصية إنشاء المتجر رفع صور اختيارية (مثل شعار المتجر، صور المنتجات) أو وثائق رسمية (مثل السجل التجاري) **بموافقتك الصريحة**. يتم استخدام هذه الوثائق للتحقق من هوية المتجر والامتثال لمتطلبات الخدمة.
+          </li>
+          <li>
+            <b>بيانات الدفع (للتجار والمشترين):</b> إذا تم استخدام بوابات دفع داخل التطبيق، فإننا نجمع بيانات المعاملات المالية، ومعلومات الدفع الضرورية (مثل آخر أربعة أرقام للبطاقة إذا كانت طريقة الدفع محفوظة)، ورموز المعاملات. لا نقوم بتخزين تفاصيل بطاقة الائتمان/الخصم الكاملة في أنظمتنا، بل يتم التعامل معها وتشفيرها بواسطة شريك معالجة الدفع المعتمد لدينا.
+          </li>
+          <li><b>بيانات الطلبات:</b> تفاصيل المنتجات التي تطلبونها، عنوان التسليم، تفضيلات التوصيل.</li>
+          <li><b>بيانات التواصل:</b> أي معلومات تقدمونها عند التواصل مع فريق الدعم لدينا.</li>
+        </ul>
+      </li>
+      <li>
+        <b>البيانات التي نجمعها تلقائيًا (أثناء استخدامك للتطبيق):</b>
+        <ul>
+          <li>
+            <b>بيانات الموقع الجغرافي (Location Data):</b>
+            <p>
+              نجمع بيانات الموقع الجغرافي الخاص بك (مثل إحداثيات GPS، معلومات الشبكة، Wi-Fi) <b>بموافقتك</b>.
+              يتم استخدام هذه البيانات لـ:
+              <ul>
+                <li>تحديد أقرب المتاجر والمنتجات المتوفرة لك.</li>
+                <li>تسهيل عملية التوصيل من خلال مشاركة موقع التسليم مع شريك التوصيل.</li>
+                <li>تحسين جودة خدمة التوصيل وتحديد مناطق الخدمة.</li>
+              </ul>
+              يمكنك دائمًا التحكم في إعدادات الموقع من خلال إعدادات جهازك.
+            </p>
+          </li>
+          <li>
+            <b>معرّفات الإشعارات الفورية (Push Tokens):</b>
+            نجمع رمز تعريف جهازك الخاص بالإشعارات (Push Notification Token) لغرض وحيد هو إرسال التنبيهات الفورية الهامة المتعلقة بطلباتك أو خدماتنا.
+          </li>
+          <li><b>معلومات الجهاز:</b> نوع الجهاز، نظام التشغيل، معرّفات الجهاز الفريدة، معلومات شبكة المحمول.</li>
+          <li><b>بيانات الاستخدام:</b> تفاعلاتك مع التطبيق، الصفحات التي تزورها، الميزات التي تستخدمها، والوقت الذي تقضيه على التطبيق.</li>
+          <li><b>ملفات تعريف الارتباط (Cookies):</b> نستخدم ملفات تعريف الارتباط والتقنيات المماثلة لتحسين تجربة المستخدم وتخصيص المحتوى.</li>
+          <li>
+            <b>بيانات التسجيل عبر الطرف الثالث:</b> إذا اخترت التسجيل أو تسجيل الدخول باستخدام حسابات خارجية (مثل Google أو Facebook)، فإننا نجمع فقط المعلومات الضرورية والمتاحة علناً من تلك الخدمة، مثل اسمك وعنوان بريدك الإلكتروني.
+          </li>
+        </ul>
+      </li>
+    </ul>
+
+    <h3>2. كيف نستخدم بياناتك</h3>
+    <p>نستخدم البيانات المجمعة للأغراض التالية:</p>
+    <ul>
+      <li>لتقديم وتشغيل خدمات "أسواق أكسب" وتسهيل عمليات الشراء والتوصيل.</li>
+      <li>لإدارة حسابات المستخدمين والتجار وتخصيص تجربتهم.</li>
+      <li>لتحسين وتطوير خدماتنا وميزات التطبيق الجديدة بناءً على تفاعلات المستخدمين.</li>
+      <li>للتواصل معكم بخصوص طلباتكم، تحديثات الخدمة، والعروض التسويقية (مع إمكانية إلغاء الاشتراك).</li>
+      <li>لضمان أمن وسلامة التطبيق ومنع الاحتيال أو الأنشطة غير القانونية.</li>
+      <li>للامتثال للمتطلبات القانونية والتنظيمية.</li>
+    </ul>
+
+    <h3>3. مشاركة البيانات</h3>
+    <p>قد نشارك بياناتكم مع الأطراف التالية:</p>
+    <ul>
+      <li><b>مع التجار وشركاء التوصيل:</b> لمشاركة المعلومات الضرورية (مثل اسم العميل، عنوان التسليم، رقم الهاتف، تفاصيل الطلب) لإتمام عملية الشراء والتوصيل.</li>
+      <li>
+        <b>معالجو الدفع (Payment Processors):</b> نشارك معلومات المعاملات المشفرة مع شركائنا المعتمدين لمعالجة الدفع (مثل البنوك وبوابات الدفع الإلكتروني) لغرض إتمام المعاملات المالية.
+      </li>
+      <li>
+        <b>خدمات التحليل والإعلان في المستقبل:</b>
+        لأغراض تحليل الأداء أو تخصيص الإعلانات، قد نتعاون مستقبلاً مع مقدمي خدمات مثل Google Analytics أو Facebook Analytics. في هذه الحالة، تتم مشاركة البيانات في شكل مجهول الهوية أو مجمّع، وسنقوم بإخطاركم بأي تغيير جوهري في استخدام البيانات.
+      </li>
+      <li><b>مع مقدمي الخدمات الخارجيين:</b> الشركات التي تقدم لنا خدمات مثل تحليل البيانات، معالجة المدفوعات، أو خدمات الاستضافة.</li>
+      <li><b>للأغراض القانونية:</b> إذا كان ذلك مطلوباً بموجب القانون أو أمر من المحكمة أو لحماية حقوقنا.</li>
+      <li><b>في حالة تغيير الملكية:</b> في حالة الاندماج، الاستحواذ، أو بيع الأصول، قد تُنقل بياناتكم كجزء من الصفقة.</li>
+    </ul>
+    <p><b>لن نقوم ببيع أو تأجير بياناتكم الشخصية لأطراف ثالثة لأغراض تسويقية.</b></p>
+
+    <h3>4. أمن البيانات</h3>
+    <p>نتخذ إجراءات أمنية تقنية وإدارية معقولة لحماية بياناتكم من الوصول غير المصرح به أو التغيير أو الكشف أو التدمير. ومع ذلك، لا يوجد نقل بيانات عبر الإنترنت أو طريقة تخزين إلكتروني آمنة بنسبة 100%.</p>
+
+    <h3>5. حقوق المستخدم</h3>
+    <p>لديكم الحق في:</p>
+    <ul>
+      <li>الوصول إلى بياناتكم الشخصية التي نحتفظ بها وتصحيحها.</li>
+      <li><b>طلب حذف حسابكم:</b> عند طلب حذف الحساب، سيتم تحويل حالة حسابكم إلى <b>"غير نشط"</b> في أنظمتنا، ولن تتمكنوا من تسجيل الدخول به مرة أخرى. نحتفظ ببعض البيانات لفترة محدودة لأغراض الامتثال القانوني وحل النزاعات. يمكنكم طلب ذلك من صفحة "حسابي" داخل التطبيق.</li>
+      <li>إلغاء الاشتراك في المراسلات التسويقية.</li>
+    </ul>
+    <p>لممارسة هذه الحقوق، يرجى التواصل معنا عبر معلومات الاتصال أدناه.</p>
+
+    <h3>6. تغييرات سياسة الخصوصية</h3>
+    <p>قد نقوم بتحديث سياسة الخصوصية هذه من وقت لآخر. سنقوم بإخطاركم بأي تغييرات جوهرية عن طريق نشر السياسة الجديدة على هذه الصفحة أو من خلال إشعارات داخل التطبيق.</p>
+
+    <h3>7. الاتصال بنا</h3>
+    <p>إذا كانت لديكم أي أسئلة أو استفسارات حول سياسة الخصوصية هذه، يرجى التواصل معنا عبر:</p>
+    <p>البريد الإلكتروني: <a href="mailto:support@aksab.com" style="color:var(--accent-color);">support@aksab.com</a></p>
+    <p>رقم الهاتف: <a href="tel:+201021070462" style="color:var(--accent-color);">+201021070462</a></p>
+
+    ---
+
+    <h2><i class="fas fa-gavel"></i> شروط الاستخدام</h2>
+
+    <p>
+      مرحباً بكم في **"أسواق أكسب"**. تحدد شروط الاستخدام هذه القواعد واللوائح التي تحكم وصولك واستخدامك لتطبيق "أسواق أكسب" وجميع الخدمات المقدمة من خلاله.
+      باستخدامك للتطبيق، فإنك توافق على الالتزام بهذه الشروط. إذا كنت لا توافق على هذه الشروط، يرجى عدم استخدام التطبيق.
+    </p>
+
+    <h3>1. أهلية الاستخدام</h3>
+    <p>يجب أن تكون قد بلغت 18 عامًا على الأقل لاستخدام هذا التطبيق. باستخدام التطبيق، فإنك تقر وتضمن أنك تبلغ من العمر 18 عامًا أو أكثر وتتمتع بالصلاحية القانونية لإبرام هذا الاتفاق.</p>
+
+    <h3>2. حسابات المستخدمين</h3>
+    <ul>
+      <li>أنت مسؤول عن الحفاظ على سرية معلومات حسابك، بما في ذلك كلمة المرور.</li>
+      <li>أنت مسؤول عن جميع الأنشطة التي تتم تحت حسابك.</li>
+      <li>يجب عليك إبلاغنا فورًا بأي استخدام غير مصرح به لحسابك.</li>
+      <li>يحق لنا تعليق أو إنهاء حسابك في حال انتهاك هذه الشروط.</li>
+    </ul>
+
+    <h3>3. سلوك المستخدم</h3>
+    <p>أنت توافق على عدم استخدام التطبيق لأي غرض غير قانوني أو محظور بموجب هذه الشروط. ويشمل ذلك، على سبيل المثال لا الحصر:</p>
+    <ul>
+      <li>نشر أو نقل أي محتوى غير قانوني، ضار، مسيء، تشهيري، بذيء، أو بغيض.</li>
+      <li>المشاركة في أي نشاط احتيالي أو مضلل.</li>
+      <li>محاولة الوصول غير المصرح به إلى أي جزء من التطبيق أو أنظمة الكمبيوتر الخاصة بنا.</li>
+      <li>التسبب في تعطيل أو إتلاف التطبيق أو الخدمات.</li>
+    </ul>
+
+    <h3>4. الطلبات، الدفع، والتوصيل</h3>
+    <ul>
+      <li>جميع الطلبات تتم من خلال التطبيق وهي ملزمة.</li>
+      <li>أنت مسؤول عن سداد جميع المدفوعات المستحقة للطلبات والرسوم ذات الصلة.</li>
+      <li>تُقدم خدمات التوصيل وفقاً للشروط المحددة من قبل المتاجر أو شركاء التوصيل، وقد تختلف رسوم التوصيل وأوقاته.</li>
+      <li>"أسواق أكسب" غير مسؤولة عن جودة المنتجات المقدمة من قبل التجار، ولكننا نسعى للعمل مع شركاء موثوقين.</li>
+    </ul>
+
+    <h3>5. الروابط الخارجية</h3>
+    <p>قد يحتوي التطبيق على روابط لمواقع أو خدمات خارجية لا تتبع "أسواق أكسب". نحن لسنا مسؤولين عن ممارسات الخصوصية أو محتوى هذه المواقع أو الخدمات.</p>
+
+    <h3>6. إخلاء المسؤولية عن الضمانات</h3>
+    <p>يُقدم التطبيق والخدمات "كما هي" و"كما هي متاحة" دون أي ضمانات من أي نوع، صريحة أو ضمنية. لا نضمن أن التطبيق سيكون خاليًا من الأخطاء، أو أن الوصول إليه سيكون غير منقطع.</p>
+
+    <h3>7. تحديد المسؤولية</h3>
+    <p>إلى أقصى حد يسمح به القانون، لن تكون "أسواق أكسب" مسؤولة عن أي أضرار مباشرة، غير مباشرة، عرضية، خاصة، تبعية، أو عقابية، بما في ذلك على سبيل المثال لا الحصر، خسارة الأرباح أو البيانات، الناتجة عن استخدامك أو عدم قدرتك على استخدام التطبيق.</p>
+
+    <h3>8. القانون الحاكم وحل النزاعات</h3>
+    <p>تخضع هذه الشروط وتفسر وفقاً لقوانين جمهورية مصر العربية. أي نزاع ينشأ عن هذه الشروط سيخضع للاختصاص القضائي الحصري للمحاكم في جمهورية مصر العربية.</p>
+
+    <h3>9. تغييرات على الشروط</h3>
+    <p>تحتفظ "أسواق أكسب" بالحق في تعديل هذه الشروط في أي وقت. سنقوم بنشر الشروط المعدلة على هذه الصفحة، ويعتبر استمرار استخدامك للتطبيق بعد نشر التغييرات بمثابة موافقة منك على الشروط المعدلة.</p>
+
+
+  </div>
+
+  <script type="module">
+    // وظيفة تبديل الوضع الفاتح/الداكن
+    const themeToggle = document.getElementById('themeToggle');
+    const body = document.body;
+
+    // تحميل الوضع المفضل من localStorage عند تحميل الصفحة
+    const savedTheme = localStorage.getItem('theme');
+    if (savedTheme) {
+        body.classList.add(savedTheme);
+        if (savedTheme === 'dark-mode') {
+            themeToggle.querySelector('i').classList.replace('fa-moon', 'fa-sun');
+        } else {
+            themeToggle.querySelector('i').classList.replace('fa-sun', 'fa-moon');
+        }
+    } else {
+        // الوضع الافتراضي إذا لم يتم حفظ تفضيل
+        body.classList.add('light-mode');
+        themeToggle.querySelector('i').classList.replace('fa-sun', 'fa-moon');
+    }
+
+    // تبديل الوضع عند النقر على الزر
+    themeToggle.addEventListener('click', () => {
+        if (body.classList.contains('light-mode')) {
+            body.classList.replace('light-mode', 'dark-mode');
+            themeToggle.querySelector('i').classList.replace('fa-moon', 'fa-sun');
+            localStorage.setItem('theme', 'dark-mode');
+        } else {
+            body.classList.replace('dark-mode', 'light-mode');
+            themeToggle.querySelector('i').classList.replace('fa-sun', 'fa-moon');
+            localStorage.setItem('theme', 'light-mode');
+        }
+    });
+  </script>
+</body>
+</html>
